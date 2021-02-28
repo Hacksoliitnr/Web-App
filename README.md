@@ -6,12 +6,12 @@ User authentication for testing:
 
 Test1:
 
-Username: test2
+Username: vivek
 
-Password: tested2
+Password: heythere
 
 Test2:
 
-Username: test3
+Username: test1
 
-Password: tested3
+Password: okaytested
