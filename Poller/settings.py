@@ -29,8 +29,7 @@ SECRET_KEY = config('SECRET_KEY', default =True)
 DEBUG = config('DEBUG', cast=bool,  default = '')
 
 ALLOWED_HOSTS = [
-    host.strip()
-    for host in config('ALLOWED_HOSTS', default ='').split(',')
+    "*"
 ]
 
 
