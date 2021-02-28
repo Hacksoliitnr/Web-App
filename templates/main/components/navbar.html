@@ -1,0 +1,14 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="{% url 'index' %}" class="brand-logo">Poller</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'index' %}">Candidates</a></li>
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+        
+      </ul>
+    </div>
+  </nav>

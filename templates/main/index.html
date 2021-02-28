@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+    {% include 'main/components/navbar.html' %}
+
+    <div class="container">
+        <div class="row">
+            <h3>Now select your candidate 🗳</h3>
+        </div>
+    
+        
+        <div class="row">
+            {% for question in question_list %}
+            <div class="col s12 m4">
+                <b>    
+                    <div class="card blue-grey lighten-1 class ">
+                        <div class="card-content white-text">
+                            {% if forloop.first %}
+                            <img class="materialboxed responsive-img" src="{% static 'main/images/modi.jpg' %}">
+                            {% elif forloop.last %}
+                            <img class="materialboxed responsive-img" src="{% static 'main/images/arvind.jpg' %}">
+                            {% else %}
+                            <img class="materialboxed responsive-img" src="{% static 'main/images/rahul.jpg' %}">
+                            {% endif %}
+                            <span class="card-title">{{question.content}}</span>
+                            
+                        </div>
+                        <div class="card-action">
+                            <a href="{% url 'question' question.slug %}">VoteNow</a>
+
+                        </div>
+                    </div>  
+                </b>   
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+   
+    
+
+{% endblock %}
+
+{% block script %} 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.materialboxed');
+        var instances = M.Materialbox.init(elems,);
+  });
+    </script>
+{% endblock %}
